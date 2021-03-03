@@ -3,6 +3,7 @@ import challenges from '../challenges.json'
 import Cookies from 'js-cookie'
 import { LevelUpModal } from '../components/LevelUpModal';
 import { signIn, useSession } from 'next-auth/client'
+import { DarkModeSwitch } from '../components/DarkModeSwitch';
 
 interface Challenge {
   type: 'body' | 'eye'
@@ -125,6 +126,8 @@ export function ChallangeProvider({ children, ...rest }: ChallengeProviderProps)
       closeLevelUpModal,
       session,
        }}>
+
+      <DarkModeSwitch />
 
       {!session && <>
         Not signed in <br/>
